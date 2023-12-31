@@ -6,14 +6,14 @@ const dbName = "TraineesDB";
 let db = "";
 
 async function dbconnection() {
-    await client.connect();
+    await client.connect(); // to connect to the MongoDB server
     console.log("DB connection established...");
-    db = client.db(dbName);
-    return db;
+    db = client.db(dbName); // to make the MongoDB databaes as the active database
+    return db; // returning the db connection back to function call
 }
 
-async function getDB() {
-    return db;
-}
+// async function getDB() {
+//     return db;
+// }
 
-module.exports = { dbconnection, getDB };
+module.exports = { dbconnection };
